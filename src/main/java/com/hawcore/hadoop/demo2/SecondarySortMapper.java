@@ -7,15 +7,14 @@ import org.apache.hadoop.mapreduce.Mapper;
 
 import java.io.IOException;
 
-/** 
- * SecondarySortMapper implements the map() function for 
+/**
+ * SecondarySortMapper implements the map() function for
  * the secondary sort design pattern.
  *
  * @author Mahmoud Parsian
- *
  */
-public class SecondarySortMapper 
-    extends Mapper<LongWritable, Text, DateTemperaturePair, Text> {
+public class SecondarySortMapper
+        extends Mapper<LongWritable, Text, DateTemperaturePair, Text> {
 
     private final Text theTemperature = new Text();
     private final DateTemperaturePair pair = new DateTemperaturePair();
@@ -26,7 +25,7 @@ public class SecondarySortMapper
      * @param value has this format: "YYYY,MM,DD,temperature"
      */
     protected void map(LongWritable key, Text value, Context context)
-        throws IOException, InterruptedException {
+            throws IOException, InterruptedException {
         String line = value.toString();
         String[] tokens = line.split(",");
         // YYYY = tokens[0]

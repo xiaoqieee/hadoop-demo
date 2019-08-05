@@ -3,17 +3,16 @@ package com.hawcore.hadoop.demo2;
 import org.apache.hadoop.io.WritableComparable;
 import org.apache.hadoop.io.WritableComparator;
 
-/** 
+/**
  * The DateTemperatureGroupingComparator class
- * enable us to compare two DateTemperaturePair 
- * objects. This class is needed for sorting 
+ * enable us to compare two DateTemperaturePair
+ * objects. This class is needed for sorting
  * purposes.
  *
  * @author Mahmoud Parsian
- *
  */
-public class DateTemperatureGroupingComparator 
-   extends WritableComparator {
+public class DateTemperatureGroupingComparator
+        extends WritableComparator {
 
     public DateTemperatureGroupingComparator() {
         super(DateTemperaturePair.class, true);
@@ -22,7 +21,7 @@ public class DateTemperatureGroupingComparator
     @Override
     /**
      * Compare two objects
-     * 
+     *
      * @param wc1 a WritableComparable object, which represents a DateTemperaturePair
      * @param wc2 a WritableComparable object, which represents a DateTemperaturePair
      * @return 0, 1, or -1 (depending on the comparison of two DateTemperaturePair objects).
